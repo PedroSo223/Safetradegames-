@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeTradeGames · Compra rápida de Gold para standoff 2</title>
+    <!-- Fontes e ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0b0d14;
+            color: #f0f4ff;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* elementos neon & brilhos */
+        .neon-glow {
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.5), 0 0 25px rgba(0, 180, 255, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.25);
+            transition: box-shadow 0.2s ease;
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 18px rgba(0, 255, 255, 0.8), 0 0 35px rgba(0, 180, 255, 0.5);
+        }
+        .neon-text {
+            text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0af;
+        }
+
+        /* animações fade-up */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* containers */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.8rem 2rem;
+        }
+
+        /* cabeçalho */
+        header {
+            text-align: center;
+            padding: 2.2rem 1rem 1.2rem;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+        }
+        .logo {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff, #a6f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 25px #0ff;
+            margin-bottom: 0.3rem;
+        }
+        .slogan {
+            font-size: 1.3rem;
+            color: #ccdeff;
+            font-weight: 400;
+            border-bottom: 1px dashed #00ffff50;
+            display: inline-block;
+            padding-bottom: 6px;
+        }
+
+        /* seção valores (cards) */
+        .pricing-section {
+            margin: 3rem 0 4rem;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: inline-block;
+            border-left: 6px solid #0ff;
+            padding-left: 1rem;
+            text-shadow: 0 0 10px cyan;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+        .price-card {
+            background: rgba(10, 20, 40, 0.7);
+            backdrop-filter: blur(6px);
+            border: 1px solid #0ff3;
+            border-radius: 32px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.25s;
+            box-shadow: 0 10px 25px -5px #00ccff20;
+            cursor: default;
+            animation: fadeUp 0.6s ease forwards;
+            opacity: 0; /* preenchido pela animação */
+        }
+        .price-card:nth-child(1) { animation-delay: 0.05s; }
+        .price-card:nth-child(2) { animation-delay: 0.1s; }
+        .price-card:nth-child(3) { animation-delay: 0.15s; }
+        .price-card:nth-child(4) { animation-delay: 0.2s; }
+        .price-card:nth-child(5) { animation-delay: 0.25s; }
+        .price-card:nth-child(6) { animation-delay: 0.3s; }
+
+        .price-card:hover {
+            border-color: #0ff;
+            transform: scale(1.02);
+            background: rgba(20, 40, 70, 0.8);
+        }
+        .gold-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #fff, #0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #b3f0ff;
+            margin-top: 8px;
+        }
+
+        /* seção pix */
+        .pix-area {
+            background: rgba(0, 255, 255, 0.03);
+            border-radius: 48px;
+            padding: 2.5rem 2rem;
+            margin: 3rem 0;
+            border: 1px solid #0ff3;
+            box-shadow: inset 0 0 30px #00ffff08, 0 15px 30px #00000055;
+            backdrop-filter: blur(4px);
+            transition: 0.2s;
+        }
+        .pix-key-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            background: #0a1424;
+            padding: 1.2rem 2rem;
+            border-radius: 80px;
+            border: 1px solid #0ff;
+            box-shadow: 0 0 18px #0ff6;
+        }
+        .pix-key {
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ffffff;
+            word-break: break-all;
+            text-align: center;
+            background: #0f1b2f;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid cyan;
+        }
+        .btn-copy {
+            background: linear-gradient(145deg, #00ccff, #0066ff);
+            border: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            padding: 0.9rem 2.2rem;
+            border-radius: 60px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 25px #0ff;
+            transition: all 0.2s;
+            border: 1px solid #ffffff80;
+        }
+        .btn-copy:hover {
+            background: linear-gradient(145deg, #1ed5ff, #2d7aff);
+            box-shadow: 0 0 40px #0ff, 0 0 60px #0077ff;
+            transform: scale(1.02);
+        }
+        .btn-copy i {
+            font-size: 1.4rem;
+        }
+        .warning-highlight {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            background: #00ffff10;
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            border-left: 6px solid cyan;
+            border-right: 6px solid cyan;
+            box-shadow: 0 0 20px cyan;
+            backdrop-filter: blur(5px);
+        }
+
+        /* botão "já paguei" */
+        .btn-primary {
+            background: transparent;
+            border: 2px solid #0ff;
+            color: #0ff;
+            font-size: 1.7rem;
+            font-weight: 700;
+            padding: 1.2rem 3rem;
+            border-radius: 80px;
+            cursor: pointer;
+            box-shadow: 0 0 25px #0ff4;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin: 2rem 0 3rem;
+        }
+        .btn-primary:hover {
+            background: #0ff2;
+            box-shadow: 0 0 45px cyan;
+            border-color: white;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        /* formulário */
+        .form-section {
+            scroll-margin-top: 30px;
+            background: linear-gradient(145deg, #070f1c, #010410);
+            border-radius: 70px;
+            padding: 2.8rem 2.5rem;
+            border: 1px solid #0ff4;
+            box-shadow: 0 0 60px #00ccff15;
+        }
+        .form-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            max-width: 700px;
+            margin: 2rem auto 0;
+        }
+        .input-field {
+            background: #111c2e;
+            border: 1px solid #2f4f7f;
+            border-radius: 50px;
+            padding: 1.2rem 2rem;
+            font-size: 1.1rem;
+            color: white;
+            outline: none;
+            transition: 0.2s;
+        }
+        .input-field:focus {
+            border-color: #0ff;
+            box-shadow: 0 0 20px #0ff7;
+        }
+        .file-area {
+            border: 2px dashed #0ff;
+            background: #0a1424;
+            border-radius: 40px;
+            padding: 2.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .file-area:hover {
+            background: #0f1d33;
+            border-color: white;
+        }
+        .file-area input {
+            display: none;
+        }
+        .file-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+            color: #b0e0ff;
+        }
+        .file-label i {
+            font-size: 2.8rem;
+            color: cyan;
+        }
+        .btn-submit {
+            background: #00c3ff;
+            border: none;
+            color: #010b1a;
+            font-weight: 800;
+            font-size: 1.8rem;
+            padding: 1.3rem;
+            border-radius: 60px;
+            box-shadow: 0 0 35px cyan;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid white;
+            margin-top: 1rem;
+        }
+        .btn-submit:hover {
+            background: #60e4ff;
+            box-shadow: 0 0 70px #0ff;
+        }
+
+        .footer-note {
+            background: #0ff1;
+            border-radius: 60px;
+            padding: 1.8rem 2rem;
+            margin: 3rem 0 1rem;
+            text-align: center;
+            font-size: 1.35rem;
+            border: 1px solid cyan;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+        }
+
+        /* responsividade fina */
+        @media (max-width: 600px) {
+            .container { padding: 1rem; }
+            .logo { font-size: 2.5rem; }
+            .pix-key { font-size: 1rem; }
+            .btn-copy { font-size: 1.1rem; padding: 0.7rem 1.5rem; }
+            .btn-primary { font-size: 1.4rem; }
+        }
+        /* toasts custom */
+        .toast-message {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #001d34;
+            border: 2px solid #0ff;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            box-shadow: 0 0 30px cyan;
+            z-index: 999;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="toast-message" id="toast">✅ Chave Pix copiada!</div>
+
+    <header>
+        <div class="container">
+            <h1 class="logo fade-up">SafeTradeGames</h1>
+            <p class="slogan fade-up" style="animation-delay: 0.1s;">⚡ Compra rápida e segura de Gold ⚡</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Seção valores -->
+        <section class="pricing-section">
+            <h2 class="section-title fade-up">💰 Valores do Gold</h2>
+            <div class="card-grid">
+                <div class="price-card"><span class="gold-amount">200 Gold</span><div class="gold-price">R$10</div></div>
+                <div class="price-card"><span class="gold-amount">500 Gold</span><div class="gold-price">R$20</div></div>
+                <div class="price-card"><span class="gold-amount">1000 Gold</span><div class="gold-price">R$40</div></div>
+                <div class="price-card"><span class="gold-amount">3000 Gold</span><div class="gold-price">R$90</div></div>
+                <div class="price-card"><span class="gold-amount">5000 Gold</span><div class="gold-price">R$140</div></div>
+                <div class="price-card"><span class="gold-amount">10000 Gold</span><div class="gold-price">R$240</div></div>
+            </div>
+        </section>
+
+        <!-- Seção pix com chave e botão copiar -->
+        <section class="pix-area fade-up" style="animation-delay: 0.3s;">
+            <div class="pix-key-container">
+                <span class="pix-key" id="pixKeyText">0070c2fe-018e-4b03-826d-cbb1822701ef</span>
+                <button class="btn-copy" id="copyPixBtn"><i class="far fa-copy"></i> Copiar chave Pix</button>
+            </div>
+            <div class="warning-highlight">
+                ⚠️ Envie o valor correspondente à quantidade de Gold desejada.
+            </div>
+        </section>
+
+        <!-- Botão Já paguei (rolagem suave até form) -->
+        <div style="text-align: center;" class="fade-up" style="animation-delay: 0.4s;">
+            <button class="btn-primary" id="goToFormBtn">👉 Já paguei <i class="fas fa-arrow-down"></i></button>
+        </div>
+
+        <!-- Formulário de confirmação -->
+        <section id="formSection" class="form-section fade-up" style="animation-delay: 0.5s;">
+            <h2 class="section-title" style="border-left-color: white; margin-top: 0;">📋 Confirmar pagamento</h2>
+            <form id="paymentForm" class="form-grid">
+                <input type="text" class="input-field" placeholder="Nome completo" id="nome" required>
+                <input type="tel" class="input-field" placeholder="WhatsApp (com DDD)" id="whatsapp" required>
+                <input type="email" class="input-field" placeholder="E-mail" id="email" required>
+
+                <!-- Upload comprovante -->
+                <div class="file-area" onclick="document.getElementById('comprovante').click();">
+                    <input type="file" id="comprovante" accept=".pdf,image/*" required>
+                    <div class="file-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Envie Aqui O Comprovante Do Pix (imagem ou PDF)</span>
+                        <span style="font-size: 0.9rem; color: #0ff;" id="fileName"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">👉 Enviar comprovante</button>
+            </form>
+        </section>
+
+        <!-- Aviso final -->
+        <div class="footer-note fade-up" style="animation-delay: 0.6s;">
+            📲 Assim que o comprovante for enviado, nossa equipe entrará em contato pelo WhatsApp para realizar a transferência do Gold.
+        </div>
+    </main>
+
+    <script>
+        (function() {
+            // Copiar pix com toast
+            const copyBtn = document.getElementById('copyPixBtn');
+            const pixText = document.getElementById('pixKeyText').innerText;
+            const toast = document.getElementById('toast');
+
+            function showToast(msg) {
+                toast.style.display = 'block';
+                toast.textContent = msg || '✅ Chave Pix copiada!';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 2500);
+            }
+
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(pixText);
+                    showToast('✅ Chave Pix copiada!');
+                } catch (err) {
+                    // fallback
+                    const textarea = document.createElement('textarea');
+                    textarea.value = pixText;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    showToast('✅ Chave Pix copiada!');
+                }
+            });
+
+            // Rolagem suave botão "Já paguei"
+            document.getElementById('goToFormBtn').addEventListener('click', () => {
+                document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Mostrar nome do arquivo selecionado (pequeno detalhe)
+            const fileInput = document.getElementById('comprovante');
+            const fileNameSpan = document.getElementById('fileName');
+            fileInput.addEventListener('change', function(e) {
+                if (this.files.length > 0) {
+                    fileNameSpan.textContent = `📎 ${this.files[0].name}`;
+                } else {
+                    fileNameSpan.textContent = '';
+                }
+            });
+
+            // Validação simples do form + mensagem de sucesso
+            const form = document.getElementById('paymentForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const nome = document.getElementById('nome').value.trim();
+                const whats = document.getElementById('whatsapp').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const file = fileInput.files[0];
+
+                // validação básica
+                if (!nome || !whats || !email || !file) {
+                    alert('❌ Por favor, preencha todos os campos e anexe o comprovante.');
+                    return;
+                }
+
+                // validação de email simples
+                if (!email.includes('@') || !email.includes('.')) {
+                    alert('❌ Insira um e-mail válido.');
+                    return;
+                }
+
+                // whatsapp (mínimo 10 dígitos)
+                const digits = whats.replace(/\D/g, '');
+                if (digits.length < 10) {
+                    alert('❌ WhatsApp precisa ter pelo menos 10 dígitos (incluindo DDD).');
+                    return;
+                }
+
+                // sucesso
+                alert('✅ Comprovante enviado com sucesso! Nossa equipe entrará em contato em breve.');
+                form.reset();
+                fileNameSpan.textContent = '';
+            });
+
+            // Animações já estão com CSS, mas garantir que elementos ocultos apareçam (fallback)
+            // Não necessário, apenas garantia.
+        })();
+    </script>
+
+    <!-- decorativo: alguns detalhes de brilho fixo -->
+    <div style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; background: radial-gradient(circle at 20% 40%, #00ffff08, transparent 40%), radial-gradient(circle at 90% 70%, #0066ff10, transparent 50%);"></div>
+</body>
+</html>
